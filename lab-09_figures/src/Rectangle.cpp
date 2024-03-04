@@ -6,7 +6,7 @@ Rectangle::Rectangle(int id, int x, int y, int height, int width) : Figure(id, x
 Rectangle::~Rectangle() {}
 
 void Rectangle::print() const {
-    std::cout << "Rectangle " << id << ": x = " << x << " y = " << y << " width = " << width << " height = " << height << std::endl;
+    printf("Rectangle %d: x = %d y = %d width = %d height = %d\n", id, x, y, width, height);
 }
 
 bool Rectangle::is_inside(int x, int y) const {
