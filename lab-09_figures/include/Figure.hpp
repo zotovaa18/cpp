@@ -10,10 +10,8 @@ public:
     virtual void zoom(int factor) = 0;
     void move(int new_x, int new_y);
 
-    int get_id() const {
-        return id;
-    }
-
+    int get_id() const;
+    
 protected:
     int id;
     int x;
