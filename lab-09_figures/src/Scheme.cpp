@@ -37,7 +37,7 @@ void Scheme::remove_figure(int id) {
     }
 }
 
-void Scheme::print_all_figures() {
+void Scheme::print_all_figures() const {
     for (int i = 0; i < count_; i++) {
         figures_[i]->print();
     } 
@@ -52,7 +52,7 @@ void Scheme::zoom_figure(int id, int factor) {
     }
 }
 
-Figure* Scheme::is_inside_figure(int x, int y) {
+Figure* Scheme::is_inside_figure(int x, int y) const {
     for (int i = 0; i < count_; i++) {
         if (figures_[i]->is_inside(x, y)) {
             return figures_[i];
