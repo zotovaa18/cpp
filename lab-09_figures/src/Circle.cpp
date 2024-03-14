@@ -4,8 +4,7 @@
 
 
 Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius(radius) {
-    int size = strlen(label) + 1;
-    this->label = new char[size];
+    this->label = new char[strlen(label) + 1];
     strcpy(this->label, label);
 }
 
@@ -21,10 +20,10 @@ bool Circle::is_inside(int x, int y) const {
     int dx = x - this->x;
     int dy = y - this->y;
     
-    return (dx*dx + dy*dy) <= (radius*radius);
+    return ((dx*dx + dy*dy) <= (radius*radius));
 }
 
 void Circle::zoom(int factor) {
-    radius = radius * factor;
+    radius *= factor;
 }
 

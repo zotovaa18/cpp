@@ -15,8 +15,7 @@ Scheme::~Scheme() {
 
 void Scheme::push_back_figure(Figure* fg) {
     if (count_ < capacity_) {
-        figures_[count_] = fg;
-        count_++;
+        figures_[count_++] = fg;
     }
 }
 
@@ -39,22 +38,24 @@ void Scheme::remove_figure(int id) {
 
 void Scheme::print_all_figures() const {
     for (int i = 0; i < count_; i++) {
-        figures_[i]->print();
+        if (figures_[i] != nullptr) {
+            figures_[i]->print();
+        }
     } 
 }
 
 void Scheme::zoom_figure(int id, int factor) {
     for (int i = 0; i < count_; i++) {
-        if (figures_[i]->get_id() == id) {
+        if (figures_[i]->get_id() == id && figures_[i] != nullptr) {
             figures_[i]->zoom(factor);
-            break;
+            return;
         } 
     }
 }
 
 Figure* Scheme::is_inside_figure(int x, int y) const {
     for (int i = 0; i < count_; i++) {
-        if (figures_[i]->is_inside(x, y)) {
+        if (figures_[i]->is_inside(x, y) && figures_[i] != nullptr) {
             return figures_[i];
         }
     }
@@ -63,9 +64,9 @@ Figure* Scheme::is_inside_figure(int x, int y) const {
 
 void Scheme::move(int id, int new_x, int new_y) {
     for (int i = 0; i < count_; i++) {
-        if (figures_[i]->get_id() == id) {
+        if (figures_[i]->get_id() == id && figures_[i] != nullptr) {
             figures_[i]->move(new_x, new_y);
-            break;
+            return;
         } 
     }
 }
