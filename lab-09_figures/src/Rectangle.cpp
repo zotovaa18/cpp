@@ -1,5 +1,5 @@
 #include "Rectangle.hpp"
-#include <cstdio>
+#include <stdio.h>
 
 Rectangle::Rectangle(int id, int x, int y, int height, int width) : Figure(id, x, y), height(height), width(width) {}
 
