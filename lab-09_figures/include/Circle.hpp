@@ -6,7 +6,7 @@ class Circle : public Figure {
 public:
     Circle(int id, int x, int y, int radius, const char* label);
 
-    ~Circle() override;
+    ~Circle();
 
     void print() const override;
     bool is_inside(int x, int y) const override;
