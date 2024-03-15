@@ -13,7 +13,7 @@ public:
     int get_id() const;
     
 protected:
-    int id;
-    int x;
-    int y;
+    int id_;
+    int x_;
+    int y_;
 };

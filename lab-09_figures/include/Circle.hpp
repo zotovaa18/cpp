@@ -13,6 +13,6 @@ public:
     void zoom(int factor) override;
 
 private:
-    int radius;
-    char* label;
+    int radius_;
+    char* label_;
 };

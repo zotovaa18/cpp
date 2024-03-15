@@ -3,28 +3,28 @@
 #include <stdio.h>
 
 
-Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius(radius) {
+Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius_(radius) {
     int size = strlen(label) + 1;
-    this->label = new char[size];
-    strcpy(this->label, label);
+    label_ = new char[size];
+    strcpy(label_, label);
 }
 
 Circle::~Circle() {
-    delete[] label;
+    delete[] label_;
 }
 
 void Circle::print() const {
-    printf("Circle %d: x = %d y = %d radius = %d label = %s\n", id, x, y, radius, label);
+    printf("Circle %d: x = %d y = %d radius = %d label = %s\n", id_, x_, y_, radius_, label_);
 }
 
 bool Circle::is_inside(int x, int y) const {
-    int dx = x - this->x;
-    int dy = y - this->y;
+    int dx = x - x_;
+    int dy = y - y_;
     
-    return (dx*dx + dy*dy) <= (radius*radius);
+    return ((dx*dx + dy*dy) <= (radius_*radius_));
 }
 
 void Circle::zoom(int factor) {
-    radius *= factor;
+    radius_ *= factor;
 }
 
