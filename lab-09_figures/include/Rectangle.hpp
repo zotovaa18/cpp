@@ -11,6 +11,6 @@ public:
     void zoom(int factor) override;
 
 private:
-    int height_;
-    int width_;
+    int height;
+    int width;
 };

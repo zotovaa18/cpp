@@ -1,21 +1,22 @@
 #include "Rectangle.hpp"
 #include <cstdio>
+using namespace std;
 
-Rectangle::Rectangle(int id, int x, int y, int height, int width) : Figure(id, x, y), height_(height), width_(width) {}
+Rectangle::Rectangle(int id, int x, int y, int height, int width) : Figure(id, x, y), height(height), width(width) {}
 
 Rectangle::~Rectangle() {}
 
 void Rectangle::print() const {
-    std::printf("Rectangle %d: x = %d y = %d width = %d height = %d\n", id_, x_, y_, width_, height_);
+    printf("Rectangle %d: x = %d y = %d width = %d height = %d\n", id, x, y, width, height);
 }
 
 bool Rectangle::is_inside(int x, int y) const {
-    return (x <= x_ + width_/2 && x >= x_ - width_/2 && y <= y_ + height_/2 && y >= y_ - height_/2); 
+    return (x <= this->x + width/2 && x >= this->x - width/2 && y <= this->y + height/2 && y >= this->y - height/2); 
 }
 
 void Rectangle::zoom(int factor) {
-    height_ *= factor;
-    width_ *= factor;
+    height *= factor;
+    width *= factor;
 }
 
 

@@ -16,6 +16,8 @@ public:
     void move(int id, int new_x, int new_y);
 
 private:
+    // ...
+
     Figure** figures_; // размер массива задается в конструкторе и больше не растет
     int capacity_;
     int count_;

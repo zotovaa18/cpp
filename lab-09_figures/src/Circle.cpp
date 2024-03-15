@@ -1,30 +1,30 @@
 #include "Circle.hpp"
 #include <cstring>
 #include <cstdio>
+using namespace std;
 
-
-Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius_(radius) {
+Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius(radius) {
     int size = strlen(label) + 1;
-    label_ = new char[size];
-    strcpy(label_, label);
+    this->label = new char[size];
+    strcpy(this->label, label);
 }
 
 Circle::~Circle() {
-    delete[] label_;
+    delete[] label;
 }
 
 void Circle::print() const {
-    std::printf("Circle %d: x = %d y = %d radius = %d label = %s\n", id_, x_, y_, radius_, label_);
+    printf("Circle %d: x = %d y = %d radius = %d label = %s\n", id, x, y, radius, label);
 }
 
 bool Circle::is_inside(int x, int y) const {
-    int dx = x - x_;
-    int dy = y - y_;
+    int dx = x - this->x;
+    int dy = y - this->y;
     
-    return ((dx*dx + dy*dy) <= (radius_*radius_));
+    return ((dx*dx + dy*dy) <= (radius*radius));
 }
 
 void Circle::zoom(int factor) {
-    radius_ *= factor;
+    radius *= factor;
 }
 
