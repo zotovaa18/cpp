@@ -1,5 +1,5 @@
 #include "Rectangle.hpp"
-#include <iostream>
+#include <cstdio>
 
 Rectangle::Rectangle(int id, int x, int y, int height, int width) : Figure(id, x, y), height(height), width(width) {}
 
@@ -10,8 +10,7 @@ void Rectangle::print() const {
 }
 
 bool Rectangle::is_inside(int x, int y) const {
-    //return (x <= this->x + width/2 && x >= this->x - width/2 && y <= this->y + height/2 && y >= this->y - height/2); 
-    return (x <= this->x + width && x >= this->x && y <= this->y + height && y >= this->y); 
+    return (x <= this->x + width/2 && x >= this->x - width/2 && y <= this->y + height/2 && y >= this->y - height/2); 
 }
 
 void Rectangle::zoom(int factor) {

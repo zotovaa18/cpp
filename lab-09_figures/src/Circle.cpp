@@ -1,6 +1,6 @@
 #include "Circle.hpp"
 #include <cstring>
-#include <iostream>
+#include <cstdio>
 
 
 Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius(radius) {
