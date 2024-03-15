@@ -1,6 +1,6 @@
 #include "Circle.hpp"
 #include <cstring>
-#include <stdio.h>
+#include <cstdio>
 
 
 Circle::Circle(int id, int x, int y, int radius, const char* label) : Figure(id, x, y), radius_(radius) {
@@ -14,7 +14,7 @@ Circle::~Circle() {
 }
 
 void Circle::print() const {
-    printf("Circle %d: x = %d y = %d radius = %d label = %s\n", id_, x_, y_, radius_, label_);
+    std::printf("Circle %d: x = %d y = %d radius = %d label = %s\n", id_, x_, y_, radius_, label_);
 }
 
 bool Circle::is_inside(int x, int y) const {

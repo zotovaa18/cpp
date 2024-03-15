@@ -1,12 +1,12 @@
 #include "Rectangle.hpp"
-#include <stdio.h>
+#include <cstdio>
 
 Rectangle::Rectangle(int id, int x, int y, int height, int width) : Figure(id, x, y), height_(height), width_(width) {}
 
 Rectangle::~Rectangle() {}
 
 void Rectangle::print() const {
-    printf("Rectangle %d: x = %d y = %d width = %d height = %d\n", id_, x_, y_, width_, height_);
+    std::printf("Rectangle %d: x = %d y = %d width = %d height = %d\n", id_, x_, y_, width_, height_);
 }
 
 bool Rectangle::is_inside(int x, int y) const {
